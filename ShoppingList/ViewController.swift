@@ -17,15 +17,15 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
        tableView.dataSource = self
         
-        let item1 = Item(name: "Milk")
-        let item2 = Item(name: "Eggs")
-        let item3 = Item(name: "Bread")
+        let item1 = Item(name: "Milk", quantity: 3)
+        let item2 = Item(name: "Eggs", quantity: 12)
+        let item3 = Item(name: "Bread", quantity: 2)
         items = [item1,item2, item3]
     }
     
     @IBAction func addNewItemButtonPressed(_ sender: UIBarButtonItem) {
         if let NewItemName = newItemTextField.text, NewItemName != "" {
-            let newItem = Item(name: NewItemName)
+            let newItem = Item(name: NewItemName, quantity: 1)
             items.append(newItem)
             tableView.reloadData()
         }
